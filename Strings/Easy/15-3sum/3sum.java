@@ -6,21 +6,18 @@ class Solution {
 
         Arrays.sort(nums);
         // LinkedList<List<Integer>> sol = new LinkedList<List<Integer>>();
-
+int target = 0;
         for (int i = 0; i < nums.length - 2; i++) {
             //Only consider non-duplicate elements for i
             if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
                 // int target = 0 - nums[i];
-                int target = 0;
+                
                 int left = i + 1;
                 int right = nums.length - 1;
 
                 while (left < right) {
-                    if (nums[i] + nums[left] + nums[right] == target) {
-                        List<Integer> list = new ArrayList<>(List.of(nums[i], nums[left], nums[right])); // Create a list for the found triplet and add it to the result
-                        
+                    if (nums[i] + nums[left] + nums[right] == target) {                        
                         result.add(List.of(nums[i], nums[left], nums[right]));
-                        // sol.add(List.of(nums[i], nums[left], nums[right]));
                         while (left < right && nums[left] == nums[left + 1]) {
                             left++;
                         }
