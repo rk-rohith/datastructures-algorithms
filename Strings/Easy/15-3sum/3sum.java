@@ -9,6 +9,7 @@ class Solution {
             //Only consider non-duplicate elements for i
             if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
                 int target = 0 - nums[i];
+                //int target = 0;
                 int left = i + 1;
                 int right = nums.length - 1;
 
