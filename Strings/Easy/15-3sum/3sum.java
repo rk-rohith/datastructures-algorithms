@@ -1,7 +1,7 @@
 class Solution {
 
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
+        List<List<Integer>> result = new LinkedList<>();
         Arrays.sort(nums);
         int target = 0;
         for (int i = 0; i < nums.length - 2; i++) {
