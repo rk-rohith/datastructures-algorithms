@@ -2,8 +2,10 @@ class Solution {
 
     //2 pointers
     public List<List<Integer>> threeSum(int[] nums) {
+                List<List<Integer>> result = new ArrayList<>();
+
         Arrays.sort(nums);
-        LinkedList<List<Integer>> sol = new LinkedList<List<Integer>>();
+        // LinkedList<List<Integer>> sol = new LinkedList<List<Integer>>();
 
         for (int i = 0; i < nums.length - 2; i++) {
             //Only consider non-duplicate elements for i
@@ -15,7 +17,12 @@ class Solution {
 
                 while (left < right) {
                     if (nums[i] + nums[left] + nums[right] == target) {
-                        sol.add(List.of(nums[i], nums[left], nums[right]));
+                        List<Integer> list = new ArrayList<>(List.of(nums[i], nums[left], nums[right])); // Create a list for the found triplet and add it to the result
+                        // if (!result.contains(list)) {
+                        //     result.add(list);
+                        // }
+                        result.add(List.of(nums[i], nums[left], nums[right]));
+                        // sol.add(List.of(nums[i], nums[left], nums[right]));
                         while (left < right && nums[left] == nums[left + 1]) {
                             left++;
                         }
@@ -33,6 +40,6 @@ class Solution {
             }
         }
 
-        return sol;
+        return result;
     }
 }
