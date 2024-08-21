@@ -2,16 +2,12 @@ class Solution {
 
     //2 pointers
     public List<List<Integer>> threeSum(int[] nums) {
-                List<List<Integer>> result = new ArrayList<>();
-
+        List<List<Integer>> result = new LinkedList<>();
         Arrays.sort(nums);
-        // LinkedList<List<Integer>> sol = new LinkedList<List<Integer>>();
-int target = 0;
+        int target = 0;
         for (int i = 0; i < nums.length - 2; i++) {
             //Only consider non-duplicate elements for i
-            if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
-                // int target = 0 - nums[i];
-                
+            if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {                
                 int left = i + 1;
                 int right = nums.length - 1;
 
