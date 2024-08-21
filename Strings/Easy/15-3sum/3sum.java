@@ -21,7 +21,7 @@ class Solution {
                         // if (!result.contains(list)) {
                         //     result.add(list);
                         // }
-                        result.add(List.of(nums[i], nums[left], nums[right]));
+                        result.add(list);
                         // sol.add(List.of(nums[i], nums[left], nums[right]));
                         while (left < right && nums[left] == nums[left + 1]) {
                             left++;
