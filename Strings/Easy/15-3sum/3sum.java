@@ -18,10 +18,8 @@ class Solution {
                 while (left < right) {
                     if (nums[i] + nums[left] + nums[right] == target) {
                         List<Integer> list = new ArrayList<>(List.of(nums[i], nums[left], nums[right])); // Create a list for the found triplet and add it to the result
-                        // if (!result.contains(list)) {
-                        //     result.add(list);
-                        // }
-                        result.add(list);
+                        
+                        result.add(List.of(nums[i], nums[left], nums[right]));
                         // sol.add(List.of(nums[i], nums[left], nums[right]));
                         while (left < right && nums[left] == nums[left + 1]) {
                             left++;
